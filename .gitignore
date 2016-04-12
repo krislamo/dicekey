@@ -1,0 +1,15 @@
+#########
+# Python
+#########
+*.pyc
+
+build
+
+#########
+# Debian
+#########
+*.deb
+backup-*.tgz
+description-pak
+
+doc-pak
