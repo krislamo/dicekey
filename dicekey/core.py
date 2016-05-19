@@ -15,17 +15,35 @@
 
 # Built-in
 import sys
+import Tkinter as tk
 
 # Local
 import diceware
 
 
-def main():
-    print "Here are some random Diceware numbers for you!"
-    for number in diceware.numgen(7):
-        print number
+class GUI:
 
-    raw_input()
+    def __init__(self, master):
+
+        frame = tk.Frame(master, padx=50, pady=50)
+        frame.pack()
+
+        msgtxt = "Here are some random Diceware numbers for you!"
+        msg = tk.Label(frame, pady=15, font=("Arial", 16), text=msgtxt)
+        msg.pack()
+
+        for number in diceware.numgen(7):
+            text = tk.Label(frame, font=("FreeMono", 16), text=number)
+            text.pack()
+
+
+def main():
+
+    root = tk.Tk()
+    root.wm_title("Dicekey – Password Generator")
+    interface = GUI(root)
+
+    root.mainloop()
     sys.exit(0)
 
 

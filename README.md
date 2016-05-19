@@ -8,7 +8,7 @@ be user friendly and encourage the adoption of strong random passwords.
 Instructions on how to install from the git repository for developers.
 
 * Clone the repository: `git clone https://github.com/Kris619/Dicekey.git`
-* Install checkinstall: `sudo apt-get install checkinstall`
+* Install dependencies: `sudo apt-get install python-tk checkinstall`
 * Install Dicekey with GNU make: `make install`
 * Clean up files: `make clean`
 
