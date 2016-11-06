@@ -17,7 +17,7 @@
 from distutils.core import setup
 
 NAME = "Dicekey"
-VERSION = "0.2.0-prealpha"
+VERSION = "1.2.0-prealpha"
 AUTHOR = "Kris Lamoureux"
 AUTHOR_EMAIL = "KrisPublicEmail@gmail.com"
 URL = "https://github.com/Kris619/Dicekey/"

@@ -16,7 +16,7 @@ To uninstall Dicekey: `sudo dpkg -r dicekey`
 
 ## Development
 
-Dicekey is developed on Trisquel GNU/Linux 6.0.1 TLS i686 with Python 2.7.3
+Dicekey is developed on Trisquel GNU/Linux 7 x86_64 with Python 2.7.6
 and checkinstall 1.6.2. There *are* plans to support other platforms.
 
 Development follows the the [Semantic
@@ -27,7 +27,8 @@ occur but we shall try to follow these guidelines to the best of our ability.
 ## Copyrights and Licenses
 
 Copyright (C) 2016  Kris Lamoureux
-> All Dicekey
+
+All Dicekey
 code is [Free Software](https://www.gnu.org/philosophy/free-sw.en.html)
 released under the [GNU General Public
 License](https://github.com/Kris619/Dicekey/blob/master/LICENSE) as published
@@ -35,6 +36,7 @@ by the Free Software Foundation, version 3 of the License.
 
 
 Copyright (C) 2001  Arnold G. Reinhold, Cambridge, Massachusetts USA.
-> A G Reinhold licenses its rights to the English Diceware Wordlist under the
+
+A G Reinhold licenses its rights to the English Diceware Wordlist under the
 [Creative Commons CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 license.

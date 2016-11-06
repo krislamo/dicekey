@@ -14,7 +14,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Built-in
-import os
+import random
 
 
 # Generate Diceware numbers
@@ -25,14 +25,10 @@ def numgen(length=1):
         number = ""
 
         for _ in range(5):
-            bytedata = os.urandom(1)
-            intdata = int(bytedata.encode("hex"), 16)
-            result = intdata * 5 / 255 + 1
-            number = number + str(result)
+            PRNG = random.SystemRandom()
+            digit = PRNG.randint(1, 6)
+            number = number + str(digit)
 
         numlist.append(number)
 
-    if len(numlist) == 1:
-        return numlist[0]
-    else:
-        return numlist
+    return numlist
