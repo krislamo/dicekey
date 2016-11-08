@@ -17,7 +17,7 @@
 from distutils.core import setup
 
 NAME = "Dicekey"
-VERSION = "1.2.0-prealpha"
+VERSION = "2.0.0-prealpha"
 AUTHOR = "Kris Lamoureux"
 AUTHOR_EMAIL = "KrisPublicEmail@gmail.com"
 URL = "https://github.com/Kris619/Dicekey/"
@@ -33,5 +33,5 @@ setup(
     url=URL,
     scripts = ["dicekey/dicekey"],
     py_modules = ["dicekey.core", "dicekey.diceware"],
-    package_data={"dicekey": ["dicekey/wordlist.asc"]}
+    data_files = [("dicekey/wordlist.asc", '')]
     )

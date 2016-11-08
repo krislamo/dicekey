@@ -28,19 +28,21 @@ class GUI:
         frame = tk.Frame(master, padx=50, pady=50)
         frame.pack()
 
-        msgtxt = "Here are some random Diceware numbers for you!"
+        msgtxt = "Here is a strong random passphrase for you!"
         msg = tk.Label(frame, pady=15, font=("Arial", 16), text=msgtxt)
         msg.pack()
 
-        for number in diceware.numgen(7):
-            text = tk.Label(frame, font=("FreeMono", 16), text=number)
+        pwgen = diceware.gen()
+        if pwgen.loadlist("dicekey/wordlist.asc"):
+            passwd = ' '.join(pwgen.wordgen(7))
+            text = tk.Label(frame, font=("FreeMono", 16), text=passwd)
             text.pack()
 
 
 def main():
 
     root = tk.Tk()
-    root.wm_title("Dicekey – Password Generator")
+    root.wm_title("Dicekey – Passphrase Generator")
     interface = GUI(root)
 
     root.mainloop()

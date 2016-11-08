@@ -15,20 +15,57 @@
 
 # Built-in
 import random
+import re
 
 
-# Generate Diceware numbers
-def numgen(length=1):
-    numlist = []
+class gen:
 
-    for _ in range(length):
-        number = ""
+    wordlist = {}
 
-        for _ in range(5):
-            PRNG = random.SystemRandom()
-            digit = PRNG.randint(1, 6)
-            number = number + str(digit)
+    # Generate Diceware numbers
+    def numgen(self, length=1):
+        numlist = []
 
-        numlist.append(number)
+        PRNG = random.SystemRandom()
 
-    return numlist
+        for _ in range(length):
+            number = ""
+
+            for _ in range(5):
+                digit = PRNG.randint(1, 6)
+                number = number + str(digit)
+
+            numlist.append(number)
+
+        return numlist
+
+
+    # Load list of numbers/words
+    def loadlist(self, listloc):
+        listfile = open(listloc, "Ur")
+        data = listfile.readlines()
+
+        for line in data:
+            if not line.find("\t") is -1:
+                number, word = line[:-1].split("\t", 1)
+
+                if re.match("^[1-6]{5}$", number):
+                    if not number in self.wordlist:
+                        self.wordlist[number] = word
+
+        # Ensure the list is complete
+        if len(self.wordlist) == 7776:
+            return True
+        else:
+            self.wordlist = {}
+            return False
+
+
+    # Generate password
+    def wordgen(self, length):
+        words = []
+
+        for dicenum in self.numgen(length):
+            words.append(self.wordlist[dicenum])
+
+        return words
