@@ -1,7 +1,7 @@
 # Dicekey
 
-Dicekey is a [Diceware](http://diceware.com) password generator that aims to
-be user friendly and encourage the adoption of strong random passwords.
+Dicekey is a [Diceware](http://diceware.com) passphrase generator that aims
+to be user friendly and encourage the adoption of strong random passphrases.
 
 ## Quick Start
 

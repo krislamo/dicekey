@@ -1,4 +1,4 @@
-#    Dicekey. A Diceware password generator.
+#    Dicekey. A Diceware passphrase generator.
 #    Copyright (C) 2016  Kris Lamoureux
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -17,11 +17,11 @@
 from distutils.core import setup
 
 NAME = "Dicekey"
-VERSION = "2.0.0-prealpha"
+VERSION = "3.0.0-prealpha"
 AUTHOR = "Kris Lamoureux"
 AUTHOR_EMAIL = "KrisPublicEmail@gmail.com"
 URL = "https://github.com/Kris619/Dicekey/"
-DESCRIPTION = "A Diceware password generator"
+DESCRIPTION = "A Diceware passphrase generator"
 
 setup(
     name=NAME,
@@ -32,6 +32,6 @@ setup(
     license="GNU GPLv3",
     url=URL,
     scripts = ["dicekey/dicekey"],
-    py_modules = ["dicekey.core", "dicekey.diceware"],
+    py_modules = ["dicekey.diceware"],
     data_files = [("dicekey/wordlist.asc", '')]
     )

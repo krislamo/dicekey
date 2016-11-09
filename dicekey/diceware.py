@@ -1,4 +1,4 @@
-#    Dicekey. A Diceware password generator.
+#    Dicekey. A Diceware passphrase generator.
 #    Copyright (C) 2016  Kris Lamoureux
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,21 +18,21 @@ import random
 import re
 
 
-class gen:
+class Gen:
 
-    wordlist = {}
+    def __init__(self):
+        self.wordlist = {}
+        self.PRNG = random.SystemRandom()
 
     # Generate Diceware numbers
     def numgen(self, length=1):
         numlist = []
 
-        PRNG = random.SystemRandom()
-
         for _ in range(length):
             number = ""
 
             for _ in range(5):
-                digit = PRNG.randint(1, 6)
+                digit = self.PRNG.randint(1, 6)
                 number = number + str(digit)
 
             numlist.append(number)
@@ -55,13 +55,13 @@ class gen:
 
         # Ensure the list is complete
         if len(self.wordlist) == 7776:
-            return True
+            return self.wordlist
         else:
-            self.wordlist = {}
-            return False
+            self.wordlist = None
+            return None
 
 
-    # Generate password
+    # Generate passphrase
     def wordgen(self, length):
         words = []
 
