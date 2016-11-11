@@ -25,7 +25,7 @@ from dicekey import diceware
 
 class App:
 
-    def __init__(self, master):
+    def __init__(self, master, passgen):
 
         frame = tk.Frame(master, padx=50, pady=50)
         frame.pack()
@@ -34,20 +34,33 @@ class App:
         msg = tk.Label(frame, pady=15, font=("Arial", 16), text=msgtxt)
         msg.pack()
 
-        pwgen = diceware.Gen()
-        if pwgen.loadlist("dicekey/wordlist.asc"):
-            passwd = ' '.join(pwgen.wordgen(7))
-            text = tk.Label(frame, font=("FreeMono", 16), text=passwd)
-            text.pack()
+        passwd = ' '.join(passgen.wordgen(7))
+        text = tk.Label(frame, font=("FreeMono", 16), text=passwd)
+        text.pack()
 
 
 def main():
 
-    root = tk.Tk()
-    root.wm_title("Dicekey - Passphrase Generator")
-    app = App(root)
+    pwgen = diceware.Gen()
+    wordlist = pwgen.loadlist("dicekey/wordlist.asc")
 
-    root.mainloop()
+    if len(sys.argv) > 1:
+        if wordlist:
+            if sys.argv[1].isdigit():
+                print ' '.join(pwgen.wordgen(int(sys.argv[1])))
+            else:
+                error = "Error: Argument '%s' is not an integer."
+                print error % (sys.argv[1])
+        else:
+            print "Error: Incomplete or missing word list."
+
+    else:
+        root = tk.Tk()
+        root.wm_title("Dicekey - Passphrase Generator")
+        app = App(root, pwgen)
+
+        root.mainloop()
+
     sys.exit(0)
 
 
