@@ -1,5 +1,5 @@
 #    Dicekey. A Diceware passphrase generator.
-#    Copyright (C) 2016  Kris Lamoureux
+#    Copyright (C) 2016, 2023  Kris Lamoureux
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -13,14 +13,13 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# Built-in
-from distutils.core import setup
+from setuptools import setup
 
-NAME = "Dicekey"
-VERSION = "3.1.0-prealpha"
+NAME = "dicekey"
+VERSION = "0.0.1"
 AUTHOR = "Kris Lamoureux"
-AUTHOR_EMAIL = "KrisPublicEmail@gmail.com"
-URL = "https://github.com/Kris619/Dicekey/"
+AUTHOR_EMAIL = "kris@lamoureux.io"
+URL = "https://git.krislamo.org/kris/dicekey"
 DESCRIPTION = "A Diceware passphrase generator"
 
 setup(
@@ -31,7 +30,11 @@ setup(
     author_email=AUTHOR_EMAIL,
     license="GNU GPLv3",
     url=URL,
-    scripts = ["dicekey/dicekey"],
     py_modules = ["dicekey.diceware"],
-    data_files = [("dicekey/wordlist.asc", '')]
-    )
+    data_files = [("dicekey/wordlist.asc", '')],
+    entry_points={
+        'console_scripts': [
+            'dicekey = dicekey.main:main',
+        ],
+    },
+)

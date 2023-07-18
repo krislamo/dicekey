@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #    Dicekey. A Diceware passphrase generator.
-#    Copyright (C) 2016  Kris Lamoureux
+#    Copyright (C) 2016, 2023  Kris Lamoureux
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 
 # Built-in
 import sys
-import Tkinter as tk
+import tkinter as tk
 
 # Local
 from dicekey import diceware
@@ -47,12 +47,12 @@ def main():
     if len(sys.argv) > 1:
         if wordlist:
             if sys.argv[1].isdigit():
-                print ' '.join(pwgen.wordgen(int(sys.argv[1])))
+                print(' '.join(pwgen.wordgen(int(sys.argv[1]))))
             else:
                 error = "Error: Argument '%s' is not an integer."
-                print error % (sys.argv[1])
+                print(error % (sys.argv[1]))
         else:
-            print "Error: Incomplete or missing word list."
+            print("Error: Incomplete or missing word list.")
 
     else:
         root = tk.Tk()

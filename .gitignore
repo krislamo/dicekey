@@ -1,15 +1,6 @@
-#########
-# Python
-#########
-*.pyc
-
-build
-
-#########
-# Debian
-#########
-*.deb
-backup-*.tgz
-description-pak
-
-doc-pak
+*.egg-info/
+.env
+env
+*/__pycache__/*
+.venv
+venv

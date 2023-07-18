@@ -1,32 +1,19 @@
 # Dicekey
 
-Dicekey is a [Diceware](http://diceware.com) passphrase generator that aims
-to be user friendly and encourage the adoption of strong random passphrases.
+Dicekey is a [Diceware](http://diceware.com) simple Python passphrase generator.
 
 ## Quick Start
 
-Instructions on how to install from the git repository for developers.
-
-* Clone the repository: `git clone https://github.com/Kris619/Dicekey.git`
-* Install dependencies: `sudo apt-get install python-tk checkinstall`
-* Install Dicekey with GNU make: `make install`
-* Clean up files: `make clean`
-
-To uninstall Dicekey: `sudo dpkg -r dicekey`
-
-## Development
-
-Dicekey is developed on Trisquel GNU/Linux 7 x86_64 with Python 2.7.6
-and checkinstall 1.6.2. There *are* plans to support other platforms.
-
-Development follows the the [Semantic
-Versioning](http://semver.org/spec/v2.0.0.html) 2.0.0 specification and the
-[PEP 8](https://www.python.org/dev/peps/pep-0008/) styling guide. Mistakes may
-occur but we shall try to follow these guidelines to the best of our ability.
+1. Clone the repository: `git clone https://git.krislamo.org/kris/dicekey`
+2. Install dependencies: `sudo apt-get install python-tk`
+3. Create a virtual environment: `python3 -m venv .venv`
+4. Activate the virtual environment `source .venv/bin/activate`
+5. Install package: `pip install -e .`
+6. Run `dicekey` and optionally specify a length, i.e., `dicekey 7`
 
 ## Copyrights and Licenses
 
-Copyright (C) 2016  Kris Lamoureux
+Copyright (C) 2016, 2023  Kris Lamoureux
 
 All Dicekey
 code is [Free Software](https://www.gnu.org/philosophy/free-sw.en.html)
